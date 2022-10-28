@@ -16,5 +16,8 @@ return [
     'failed' => 'These credentials do not match our records.',
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-    'logged_out' => 'The user logged out successfully'
+    'logged_out' => 'The user logged out successfully',
+    'verify_first' => 'Oops, looks like you have not verified your email yet, please verify it first!',
+    'already_verified' => 'The email already verified',
+    'token_not_valid' => 'The token is no longer valid, please, request the new token'
 ];

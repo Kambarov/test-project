@@ -23,6 +23,13 @@ Route::prefix('auth')->group(function () {
         Route::post('logout', [AuthenticationController::class, 'logout']);
         Route::get('me', [AuthenticationController::class, 'getMe']);
     });
+
+    Route::get('verify-email/{token}', [AuthenticationController::class, 'verifyEmail'])
+        ->middleware('check-token-validity')
+        ->name('verify');
+
+    Route::post('resend-verify-email', [AuthenticationController::class, 'resendVerifyEmail'])
+        ->middleware('throttle:2,1');
 });
 
 Route::apiResource('notes', NoteController::class)
