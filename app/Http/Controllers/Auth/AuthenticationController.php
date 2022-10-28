@@ -55,6 +55,6 @@ class AuthenticationController extends Controller
 
     public function getMe(): UserResource
     {
-        return (new UserResource(auth()->user()));
+        return new UserResource(auth()->user());
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 abstract class CrudClass
 {
-    public function create(Model $model, array $attributes): Model|Builder
+    public function create($model, array $attributes): Model|Builder
     {
         return $model::query()
             ->create($attributes);

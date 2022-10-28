@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthenticationController;
+use App\Http\Controllers\Notes\NoteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,6 @@ Route::prefix('auth')->group(function () {
         Route::get('me', [AuthenticationController::class, 'getMe']);
     });
 });
+
+Route::apiResource('notes', NoteController::class)
+    ->middleware('auth:sanctum');
