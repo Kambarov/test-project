@@ -82,6 +82,8 @@ class NoteController extends Controller
      */
     public function destroy(Note $note): JsonResponse
     {
+        $this->authorize('delete', $note);
+
         $this->service->delete($note);
 
         return \response()

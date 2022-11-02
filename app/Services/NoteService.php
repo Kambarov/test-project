@@ -8,10 +8,10 @@ use App\Services\Abstracts\CrudClass;
 class NoteService extends CrudClass
 {
     public function all(
-        int $limit,
-        int $offset,
+        ?int $limit,
+        ?int $offset,
         ?int $authorId,
-        string $query
+        ?string $query
     ) {
         return Note::with('author')
             ->latest('id')

@@ -40,12 +40,10 @@ class AuthenticationController extends Controller
 
     public function logout(): JsonResponse
     {
-        $this->service->deleteToken(auth()->user);
+        $this->service->deleteToken(auth()->user());
 
         return response()
-            ->json([
-                'message' => trans('auth.logged_out')
-            ], Response::HTTP_NO_CONTENT);
+            ->json(status: Response::HTTP_NO_CONTENT);
     }
 
     public function register(RegisterRequest $request): JsonResponse
